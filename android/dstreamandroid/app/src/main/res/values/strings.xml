@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">dStream</string>
+    <string name="attribution_audioPlayback">Audio playback</string>
+</resources>

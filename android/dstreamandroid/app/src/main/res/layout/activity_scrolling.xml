@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTintMode="add"
+    android:fitsSystemWindows="true"
+    tools:context=".ScrollingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="44dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:onClick="clearSearch"
+            android:text="X"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTxt" />
+
+        <EditText
+            android:id="@+id/editTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="12dp"
+            android:autoText="false"
+            android:editable="true"
+            android:ems="10"
+            android:inputType="textNoSuggestions"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toStartOf="@+id/btnClear"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txtNowPlaying"
+            android:layout_width="0dp"
+            android:layout_height="20sp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:ellipsize="start"
+            android:maxLines="1"
+            android:text="dStream"
+            android:textAlignment="textEnd"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/editTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtAuthString"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btnPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:onClick="btnPause"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:onClick="btnNext"
+                app:layout_constraintStart_toEndOf="@+id/btnPause"
+                app:layout_constraintTop_toTopOf="@+id/btnPause" />
+
+            <Button
+                android:id="@+id/btnAddAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:onClick="btnAddAll"
+                app:layout_constraintStart_toEndOf="@+id/btnNext"
+                app:layout_constraintTop_toTopOf="@+id/btnNext" />
+
+            <Button
+                android:id="@+id/btnMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:onClick="modeChange"
+                android:text="list"
+                app:layout_constraintStart_toEndOf="@+id/btnAddAll"
+                app:layout_constraintTop_toTopOf="@+id/btnAddAll" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/txtAuthString"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="user:pass"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/txtNowPlaying"
+            app:layout_constraintEnd_toEndOf="@+id/recView"
+            app:layout_constraintStart_toStartOf="@+id/recView" />
+
+        <EditText
+            android:id="@+id/txtBaseUrl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="domain"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/txtAuthString"
+            app:layout_constraintEnd_toEndOf="@+id/recView"
+            app:layout_constraintStart_toStartOf="@+id/recView" />
+
+        <CheckBox
+            android:id="@+id/chkDownload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:checked="false"
+            android:text="Download, keep and play"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/txtBaseUrl"
+            app:layout_constraintEnd_toEndOf="@+id/recView"
+            app:layout_constraintStart_toStartOf="@+id/recView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
