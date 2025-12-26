@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <category label="General">
+    <setting id="api_username"
+             type="text"
+             label="API username"
+             default=""/>
+
+    <setting id="api_password"
+             type="text"
+             label="API password"
+             option="hidden"
+             default=""/>
+
+    <setting id="smb_base_path"
+             type="text"
+             label="SMB base path"/>
+
+    <setting id="playback_mode"
+             type="select"
+             label="Playback mode"
+             values="SMB|HTTP"
+             default="1"/>
+
+    <setting id="menu_order"
+             type="select"
+             label="Menu order"
+             values="Search first|Random first"
+             default="1"/>
+
+    <setting id="api_base_url"
+             type="text"
+             label="API base URL"
+             help="The url"/>
+  </category>
+</settings>

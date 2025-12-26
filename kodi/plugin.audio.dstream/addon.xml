@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.audio.dstream"
+       name="DusteDs Streamer"
+       version="2.0.1"
+       provider-name="DST">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="main.py">
+    <provides>audio</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary>Play from dStream</summary>
+    <description>Music streaming from your private collection.</description>
+    <platform>all</platform>
+    <assets>
+      <icon>resources/icons/dst.png</icon>
+    </assets>
+  </extension>
+</addon>
